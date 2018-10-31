@@ -86,12 +86,17 @@ public class MaquinaExpendedoraMejorada {
         return cantidadDeDineroADevolver;
     }
     
-    public int vaciarDineroMaquina()
+    public void vaciarDineroMaquina()
     {
-        int cantidadDineroDevolverTotal;
-        cantidadDineroDevolverTotal = balanceClienteActual + totalDineroAcumulado;
-        balanceClienteActual = 0;
-        totalDineroAcumulado = 0;
-        return cantidadDineroDevolverTotal;
+        if(balanceClienteActual > 0) {
+            System.out.println("Imposible ejecutar, se está realizando una operación");
+        }
+        else{
+            int cantidadDineroDevolverTotal;
+            cantidadDineroDevolverTotal = totalDineroAcumulado;
+            balanceClienteActual = 0;
+            totalDineroAcumulado = 0;
+            System.out.println("Se han extraido " + cantidadDineroDevolverTotal + " euros del deposito");
+        }
     }
 }
